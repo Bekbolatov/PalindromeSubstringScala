@@ -17,11 +17,13 @@ Check out the result on a string of about 200 characters:
 
 ```
 scala PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudfgdfgdfgdfgdfgy7565f5frerexrex16559234329545498jhhgdfgfgfg089fgfhgfdsasdfghf1234567890232323232dfdfdfererertyuiuytreasdfghjklkjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq
-Result=qwertyuioplkjhgfdfghjklpoiuytrewq (512 ms, input length 195, method: check each substring)
-Result=qwertyuioplkjhgfdfghjklpoiuytrewq (5 ms, input length 195, method: Manacher's algorithm)
+Result=qwertyuioplkjhgfdfghjklpoiuytrewq (314393 us, input length 195, method: check each substring)
+Result=qwertyuioplkjhgfdfghjklpoiuytrewq (252 us, input length 195, method: Manacher's algorithm)
+
 ```
 
-Notice 512ms vs 5ms times.
+Notice 314ms vs 0.25ms running times - this is averaged over 20 runs.
+Of course, a lot here depends on what GC is doing.
 
 Note: In future, I might make the second algorithm implementation more Scala idiomatic, more FP
 

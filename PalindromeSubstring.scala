@@ -62,9 +62,9 @@ object MaximalSubstringPalindromeFinder {
 object PalindromeSubstring {
   var startTime:Long = 0L
   def resetTimer() {
-      startTime = System.currentTimeMillis
+      startTime = System.nanoTime //currentTimeMillis
   }
-  def curTime: Long = System.currentTimeMillis - startTime
+  def curTime: Long = System.nanoTime - startTime //currentTimeMillis - startTime
 
   def main(args: Array[String]) {
     if (args.length == 0) {
@@ -77,15 +77,20 @@ object PalindromeSubstring {
     } else {
       val m = MaximalSubstringPalindromeFinder;
       var x: String = ""
-      val output = "Result=%s (%d ms, input length %d, method: %s)\n"
+      val output = "Result=%s (%d us, input length %,d, method: %s)\n"
+
+      val num = 20
+      resetTimer()
+      for (n <- 1 to num) {
+        x = m.slowAlgorithm(args(0))
+      }
+      printf(output, x, curTime/num/1000, args(0).length, "check each substring")
 
       resetTimer()
-      x = m.slowAlgorithm(args(0))
-      printf(output, x, curTime, args(0).length, "check each substring")
-
-      resetTimer()
-      x = m.fastAlgorithm(args(0))
-      printf(output, x, curTime, args(0).length, "Manacher's algorithm")
+      for (n <- 1 to num) {
+        x = m.fastAlgorithm(args(0))
+      }
+      printf(output, x, curTime/num/1000, args(0).length, "Manacher's algorithm")
     }
   }  
 }
