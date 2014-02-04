@@ -4,22 +4,25 @@ PalindromeSubstringScala
 Two algorithms are provided:
 
 1. One is using a slower approach - basically a brute-force try of every substring:
-O(n^2) in string comparison operations, which are typically O(n), making a total of O(n^3).
+O(n<sup>2</sup>) in string comparison operations, which are typically O(n), making a total of O(n<sup>3</sup>).
 
 2. Another approach is to re-use as much information as possible: Manacher's algorightm.
 Here we are traversing the candidate palindrome centers once, using symmetry and knowledge
 about previously expanded palindromes (code should be self-explanatory) - 
 achieves linear time on average. 
 Worst-case situation is when the string is made out of same character: aaaaaaaaa...
-Here algorithm would have to expand to maximum at each center, making it O(n^2).
+Here algorithm would have to expand to maximum at each center, making it O(n<sup>2</sup>).
 
-Check out the benefit:
+Check out the result on a string of about 200 characters:
 
-    scala PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudfgdfgdfgdfgdfgy7565f5frerexrex16559234329545498jhhgdfgfgfg089fgfhgfdsasdfghf1234567890232323232dfdfdfererertyuiuytreasdfghjklkjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq
+```
+scala PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudfgdfgdfgdfgdfgy7565f5frerexrex16559234329545498jhhgdfgfgfg089fgfhgfdsasdfghf1234567890232323232dfdfdfererertyuiuytreasdfghjklkjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq
 Result=qwertyuioplkjhgfdfghjklpoiuytrewq (512 ms, input length 195, method: check each substring)
 Result=qwertyuioplkjhgfdfghjklpoiuytrewq (5 ms, input length 195, method: Manacher's algorithm)
+```
 
+Notice 512ms vs 5ms times.
 
-In future, I might make the second algorithm implementation more Scala idiomatic, more FP
+Note: In future, I might make the second algorithm implementation more Scala idiomatic, more FP
 
 
