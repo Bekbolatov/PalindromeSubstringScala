@@ -23,7 +23,8 @@ Result=qwertyuioplkjhgfdfghjklpoiuytrewq (252 us, input length 195, method: Mana
 ```
 
 Notice 314ms vs 0.25ms running times - this is averaged over 20 runs.
-Of course, a lot here depends on what GC is doing.
+Of course, a lot of other things might affect performance here, like data structures and function
+chosen and gc activity.
 
 Note: In future, I might make the second algorithm implementation more Scala idiomatic, more FP
 
