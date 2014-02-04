@@ -1,12 +1,10 @@
 object MaximalSubstringPalindromeFinder {
+
   def slowAlgorithm(a: String) : String = {
-    a.inits
-    .flatMap(_.tails.toList.init)
-    .filter(s=>s==(s.reverse))
-    .map(s=>(s,s.length))
-    .maxBy(_._2)
-    ._1
+    a.inits.flatMap(_.tails.toList.init).filter(s=>s==(s.reverse))
+    .map(s=>(s,s.length)).maxBy(_._2)._1
   }
+
   def fastAlgorithm(a: String) : String = {
     //implementing Manacher's algorithm, which re-uses a lot of information
     val pn = 2*a.length - 1
