@@ -70,7 +70,7 @@ object PalindromeSubstring {
     if (args.length == 0) {
       println("supply a string as a command-line argument")
       println("For example, try following command:")
-      println("scala PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudf" +
+      println("scala -classpath build/libs/PalindromeSubstringScala.jar PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudf" +
         "gdfgdfgdfgdfgy7565f5frerexrex16559234329545498jhhgdfgfgfg089fg" +
         "fhgfdsasdfghf1234567890232323232dfdfdfererertyuiuytreasdfghjkl" +
         "kjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq");
