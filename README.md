@@ -16,7 +16,7 @@ Here algorithm would have to expand to maximum at each center, making it O(n<sup
 Check out the result on a string of about 200 characters:
 
 ```
-scala PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudfgdfgdfgdfgdfgy7565f5frerexrex16559234329545498jhhgdfgfgfg089fgfhgfdsasdfghf1234567890232323232dfdfdfererertyuiuytreasdfghjklkjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq
+scala -classpath build/libs/PalindromeSubstringScala.jar PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudfgdfgdfgdfgdfgy7565f5frerexrex16559234329545498jhhgdfgfgfg089fgfhgfdsasdfghf1234567890232323232dfdfdfererertyuiuytreasdfghjklkjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq
 Result=qwertyuioplkjhgfdfghjklpoiuytrewq (314393 us, input length 195, method: check each substring)
 Result=qwertyuioplkjhgfdfghjklpoiuytrewq (252 us, input length 195, method: Manacher's algorithm)
 

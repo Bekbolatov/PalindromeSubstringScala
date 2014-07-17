@@ -1,7 +1,7 @@
 object MaximalSubstringPalindromeFinder {
 
   def slowAlgorithm(a: String) : String = {
-    a.inits.flatMap(_.tails.toList.init).filter(s=>s==(s.reverse))
+    a.inits.flatMap(_.tails.toList.init).filter(s=>s== s.reverse)
     .map(s=>(s,s.length)).maxBy(_._2)._1
   }
 
@@ -73,9 +73,9 @@ object PalindromeSubstring {
       println("scala -classpath build/libs/PalindromeSubstringScala.jar PalindromeSubstring 98jnibfgfgfgfg453bdgdfgdgdfudf" +
         "gdfgdfgdfgdfgy7565f5frerexrex16559234329545498jhhgdfgfgfg089fg" +
         "fhgfdsasdfghf1234567890232323232dfdfdfererertyuiuytreasdfghjkl" +
-        "kjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq");
+        "kjhgfdsaqwertyuioplkjhgfdfghjklpoiuytrewq")
     } else {
-      val m = MaximalSubstringPalindromeFinder;
+      val m = MaximalSubstringPalindromeFinder
       var x: String = ""
       val output = "Result=%s (%d us, input length %,d, method: %s)\n"
 
